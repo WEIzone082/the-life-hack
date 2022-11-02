@@ -31,14 +31,17 @@ const BikePage = () => {
         setSelectedDistrict(districts[0]);
     }, [youBikeDataAll]);
 
+    // handle select district
     const handleSelectDistrict = (e) => {
         setSelectedDistrict(e.target.value);
     };
 
+    // handle input keyword
     const handleKwdInput = (e) => {
         setSearchkwd(e.target.value);
     };
 
+    // handle search
     const filterData = () => {
         if (!searchkwd) {
             alert("請輸入關鍵字");
@@ -94,7 +97,7 @@ const BikePage = () => {
                 搜尋站點
             </button>
 
-            {filteredSites && (
+            {filteredSites.length > 0 && (
                 <div className="mx-[48px]">
                     <div className="flex justify-center text-h2">
                         搜尋結果
