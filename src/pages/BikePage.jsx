@@ -5,20 +5,27 @@ import { fetchYouBikeDataAll } from "../store/actions";
 
 const BikePage = () => {
     const dispatch = useDispatch();
-    const youBikeDataAll = useSelector((state) => state.initial.youBikeDataAll);
+    const youBikeDataAll = useSelector(
+        (state) => state.initial.youBikeDataAll
+    );
 
     useEffect(() => {
         dispatch(fetchYouBikeDataAll());
     }, [dispatch]);
 
     const printData = () => {
-        console.log(youBikeDataAll[0]);
+        console.log(youBikeDataAll);
     };
 
     return (
         <div className="page bike-page">
-            <h1 className="white page-title">youBike駭客</h1>
-            <button onClick={printData}>print</button>
+            <h1 className="page-title">youBike駭客</h1>
+            <button
+                onClick={printData}
+                className="option-btn"
+            >
+                print
+            </button>
         </div>
     );
 };
